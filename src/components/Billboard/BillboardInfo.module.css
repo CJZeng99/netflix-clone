@@ -1,0 +1,81 @@
+.billboard-info-container {
+  bottom: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  left: 4%;
+  position: absolute;
+  top: 0;
+  width: 36%;
+  z-index: 10;
+  border: solid 2px red;
+}
+
+.billboard-button-container {
+  display: flex;
+  line-height: 88%;
+  margin-top: 1.5vw;
+  white-space: nowrap;
+  position: relative;
+  z-index: 10;
+}
+
+.billboard-button {
+  position: relative;
+  border: 0;
+  border-radius: 4px;
+
+  padding: 0.8rem;
+  padding-left: 2rem;
+  padding-right: 2.4rem;
+  margin-left: 0;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+
+  cursor: pointer;
+
+  word-break: break-word;
+  white-space: nowrap;
+}
+
+.billboard-play-button {
+  background-color: white;
+  color: black;
+}
+
+.billboard-play-button:hover {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.billboard-play-button:active {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.billboard-info-button {
+  flex-shrink: 0;
+  background-color: rgba(109, 109, 110, 0.7);
+  color: white;
+}
+
+.billboard-info-button:hover {
+  background-color: rgba(109, 109, 110, 0.4);
+}
+
+.billboard-info-button:active {
+  background-color: rgba(109, 109, 110, 0.4);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.billboard-button-text {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 2.4rem;
+  letter-spacing: 0.02rem;
+}
