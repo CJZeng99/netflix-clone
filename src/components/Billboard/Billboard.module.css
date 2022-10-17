@@ -10,7 +10,27 @@
 
 .billboard-video-container {
   position: absolute;
-  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.billboard-video {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.billboard-video-wide {
+  width: calc(100% * (9 / (16 / 2.35)));
 }
 
 .billboard-img-container {
@@ -21,7 +41,7 @@
   right: 0;
   object-fit: cover;
   object-position: 0 0;
-  z-index: -2;
+  z-index: -1;
 }
 
 .billboard-img {
