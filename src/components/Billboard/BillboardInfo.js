@@ -3,6 +3,9 @@ import React from "react";
 import Button from "../Button";
 import styles from "./BillboardInfo.module.css";
 
+/**
+ * A component for displaying movie title, intro, and buttons on the billboard.
+ */
 const BillboardInfo = (props) => {
   const playIcon = (
     <svg
