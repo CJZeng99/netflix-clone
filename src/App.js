@@ -5,7 +5,8 @@ import Billboard from "./components/Billboard";
 import Row from "./components/Row";
 import Footer from "./components/Footer";
 
-import "./App.css";
+import bigList from "./api/movies.json";
+import styles from "./App.module.css";
 import "./normalize.css";
 
 function App() {
@@ -13,8 +14,8 @@ function App() {
     <div className="App">
       <Navbar />
       <Billboard />
-      <Row />
-      <Row />
+      <Row title="My List" list={bigList.mylist} />
+      <Row title="Recommendations" list={bigList.recommendations} />
       <Footer />
     </div>
   );
