@@ -6,7 +6,6 @@ import Row from "./components/Row";
 import Footer from "./components/Footer";
 
 import bigList from "./api/movies.json";
-import styles from "./App.module.css";
 import "./normalize.css";
 
 function App() {
@@ -14,8 +13,8 @@ function App() {
     <div className="App">
       <Navbar />
       <Billboard />
-      <Row title="My List" list={bigList.mylist} />
-      <Row title="Recommendations" list={bigList.recommendations} />
+      <Row title="My List" name="myList" />
+      <Row title="Recommendations" name="recommendList" />
       <Footer />
     </div>
   );

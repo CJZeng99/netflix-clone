@@ -2,8 +2,8 @@ import React from "react";
 
 import BillboardInfo from "./BillboardInfo";
 
-import cover from "./assets/other-cover.jpg";
-import trailer from "./assets/other-trailer.mp4";
+import cover from "./assets/M3GAN-cover.jpg";
+import trailer from "./assets/M3GAN-trailer.mp4";
 import styles from "./Billboard.module.css";
 
 /**
