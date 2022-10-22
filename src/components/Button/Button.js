@@ -10,7 +10,11 @@ const Button = (props) => {
           </button>
         </a>
       ) : (
-        <button className={props.className} type="button">
+        <button
+          className={props.className}
+          type="button"
+          onClick={props.onClick}
+        >
           {props.children}
         </button>
       )}

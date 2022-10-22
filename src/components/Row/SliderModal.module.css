@@ -1,0 +1,90 @@
+.slider-modal {
+  padding: 112.5% 0;
+
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  top: -40%;
+  width: 120%;
+
+  border-radius: 0.4vw;
+  box-shadow: rgba(0, 0, 0, 0.75) 0px 3px 10px;
+
+  z-index: 6;
+}
+
+.slider-modal .slider-modal-init {
+  padding: 60% 0;
+  width: 80%;
+}
+
+.slider-modal-art {
+  bottom: 0;
+  height: 80%;
+  left: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+
+  z-index: 6;
+}
+
+.slider-modal-info {
+  position: absolute;
+  top: 80%;
+  height: 20%;
+  width: 100%;
+  background-color: #181818;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  z-index: 6;
+}
+
+.slider-modal-button-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 5% 0;
+}
+
+.modal-button {
+  max-height: 42px;
+  max-width: 42px;
+  min-height: 32px;
+  min-width: 32px;
+
+  border-style: solid;
+  border-width: 2px;
+
+  align-items: center;
+  appearance: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  opacity: 1;
+  padding: 0.8rem;
+  position: relative;
+  will-change: background-color, color;
+  word-break: break-word;
+  white-space: nowrap;
+  border-radius: 50%;
+}
+
+.modal-remove-button {
+  color: black;
+  background-color: white;
+  border-color: white;
+}
+
+.modal-add-button {
+  color: white;
+  background-color: rgba(42, 42, 42, 0.6);
+  border-color: hsla(0, 0%, 100%, 0.5);
+}
+
+.icon {
+  height: 1.8rem;
+  width: 1.8rem;
+}

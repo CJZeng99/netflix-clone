@@ -1,0 +1,20 @@
+.slider-item-art {
+  padding: 60% 0;
+
+  height: 0;
+  overflow: hidden;
+  position: relative;
+  width: 80%;
+  border-radius: 0.2vw;
+}
+
+.slider-item-image {
+  bottom: 0;
+  height: 100%;
+  left: auto;
+  object-fit: cover;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}

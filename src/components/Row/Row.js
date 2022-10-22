@@ -1,19 +1,14 @@
 import React from "react";
-
-import { useSelector, useDispatch } from "react-redux";
-import {
-  add,
-  remove,
-  selectMyList,
-  selectRecommendList,
-} from "../../app/listsSlice";
+import { useSelector } from "react-redux";
+import { selectMyList, selectRecommendList } from "../../app/listsSlice";
+import SliderItem from "./SliderItem";
 import styles from "./Row.module.css";
 
 const Row = (props) => {
   const myList = useSelector(selectMyList);
   const recommendList = useSelector(selectRecommendList);
-  const dispatch = useDispatch();
-  const renderList = props.name === "myList" ? myList : recommendList;
+  const inMyList = props.name === "myList";
+  const renderList = inMyList ? myList : recommendList;
 
   return (
     <div className={styles.row}>
@@ -28,11 +23,7 @@ const Row = (props) => {
             {Object.values(renderList).map((movie) => {
               return (
                 <li key={movie.id} className={styles["row-slider-item"]}>
-                  <img
-                    className={styles["row-slider-item-art"]}
-                    src={movie.img}
-                    alt={movie.title}
-                  />
+                  <SliderItem movie={movie} inMyList={inMyList} />
                 </li>
               );
             })}
