@@ -11,12 +11,18 @@ import styles from "./Billboard.module.css";
  */
 const Billboard = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+
+  /* Starts playing trailer after a short delay */
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsPlaying(true);
     }, 500);
     return () => clearTimeout(timer);
   }, []);
+
+  const videoEndHandler = () => {
+    setIsPlaying(false);
+  };
 
   return (
     /* Outer span and div used as wrappers to layout Billboard and Rows */
@@ -32,9 +38,10 @@ const Billboard = () => {
             <div className={styles["billboard-video-container"]}>
               <video
                 autoPlay // to be set at deployment
-                controls
+                //controls
                 muted
                 className={`${styles["billboard-video"]} ${styles["billboard-video-wide"]}`}
+                onEnded={videoEndHandler}
               >
                 <source src={trailer} type="video/mp4" />
               </video>
