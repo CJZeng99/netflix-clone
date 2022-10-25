@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import styles from "./Navbar.module.css";
 
@@ -20,8 +20,20 @@ const Navbar = (props) => {
   /** Navigation item type of the current webpage */
   const currentItem = "home";
 
+  const [scrolled, setScrolled] = useState(false);
+  const changeNavbarColor = () => {
+    if (window.scrollY >= 1) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+  window.addEventListener("scroll", changeNavbarColor);
+
   return (
-    <div className={styles.navbar}>
+    <div
+      className={`${styles.navbar} ${scrolled ? styles["navbar-scroll"] : ""}`}
+    >
       {/* Netflix Logo */}
       <a className={styles["navbar-brand"]} href="./">
         <img src={logo} alt="Netflix Logo" />
