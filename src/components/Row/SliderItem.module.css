@@ -5,6 +5,8 @@
   overflow: hidden;
   position: relative;
   width: 80%;
+  /* max-height: 200px;
+  max-width: 140px; */
   border-radius: 0.2vw;
 }
 

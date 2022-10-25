@@ -25,43 +25,51 @@ const SliderModal = (props) => {
 
   const dispatch = useDispatch();
 
-  return (
-    <React.Fragment>
-      <div className={styles["slider-modal"]}>
-        <img
-          className={styles["slider-modal-art"]}
-          src={props.movie.img}
-          alt={props.movie.title}
-        />
-        <div className={styles["slider-modal-info"]}>
-          <div className={styles["slider-modal-button-wrapper"]}>
-            {props.inMyList ? (
-              <Button
-                onClick={() => {
-                  dispatch(remove({ list: "myList", movie: props.movie }));
-                  dispatch(add({ list: "recommendList", movie: props.movie }));
-                }}
-                className={`${styles["modal-button"]} ${styles["modal-remove-button"]}`}
-              >
-                <div className={styles["model-button-round"]}>{icon}</div>
-              </Button>
-            ) : (
-              <Button
-                onClick={() => {
-                  dispatch(
-                    remove({ list: "recommendList", movie: props.movie })
-                  );
-                  dispatch(add({ list: "myList", movie: props.movie }));
-                }}
-                className={`${styles["modal-button"]} ${styles["modal-add-button"]}`}
-              >
-                <div className={styles["model-button-round"]}>{icon}</div>
-              </Button>
-            )}
-          </div>
+  return ReactDOM.createPortal(
+    // <div> className={styles["slider-modal"]}>
+    <div
+      className={styles["slider-modal"]}
+      style={props.style}
+      onMouseLeave={props.onMouseLeave}
+    >
+      <div className={styles["slider-modal-art-wrapper"]}>
+        <div className={styles["slider-modal-art"]}>
+          <img
+            className={styles["slider-modal-image"]}
+            src={props.movie.img}
+            alt={props.movie.title}
+          />
         </div>
       </div>
-    </React.Fragment>
+
+      <div className={styles["slider-modal-info-wrapper"]}>
+        <div className={styles["slider-modal-info"]}></div>
+        <div className={styles["slider-modal-button-wrapper"]}>
+          {props.inMyList ? (
+            <Button
+              onClick={() => {
+                dispatch(remove({ list: "myList", movie: props.movie }));
+                dispatch(add({ list: "recommendList", movie: props.movie }));
+              }}
+              className={`${styles["modal-button"]} ${styles["modal-remove-button"]}`}
+            >
+              <div className={styles["model-button-round"]}>{icon}</div>
+            </Button>
+          ) : (
+            <Button
+              onClick={() => {
+                dispatch(remove({ list: "recommendList", movie: props.movie }));
+                dispatch(add({ list: "myList", movie: props.movie }));
+              }}
+              className={`${styles["modal-button"]} ${styles["modal-add-button"]}`}
+            >
+              <div className={styles["model-button-round"]}>{icon}</div>
+            </Button>
+          )}
+        </div>
+      </div>
+    </div>,
+    document.getElementById("modal")
   );
 };
 
