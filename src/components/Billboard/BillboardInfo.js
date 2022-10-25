@@ -43,6 +43,7 @@ const BillboardInfo = (props) => {
 
   return (
     <div className={styles["billboard-info-container"]}>
+      <div className={styles["billboard-info-title"]}>MΞGAN</div>
       <div className={styles["billboard-button-container"]}>
         <Button
           className={`${styles["billboard-button"]} ${styles["billboard-play-button"]}`}

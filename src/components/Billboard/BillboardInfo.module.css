@@ -8,7 +8,13 @@
   top: 0;
   width: 36%;
   z-index: 10;
-  border: solid 2px red;
+}
+
+.billboard-info-title {
+  color: #f0ffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 96px;
+  letter-spacing: 4px;
 }
 
 .billboard-button-container {

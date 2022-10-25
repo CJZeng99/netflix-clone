@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import BillboardInfo from "./BillboardInfo";
 
@@ -10,7 +10,13 @@ import styles from "./Billboard.module.css";
  * A billboard component for showcasing a movie with preview function on the home page.
  */
 const Billboard = () => {
-  const isPlaying = false;
+  const [isPlaying, setIsPlaying] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsPlaying(true);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     /* Outer span and div used as wrappers to layout Billboard and Rows */
@@ -25,7 +31,7 @@ const Billboard = () => {
           {isPlaying && (
             <div className={styles["billboard-video-container"]}>
               <video
-                // autoPlay // to be set at deployment
+                autoPlay // to be set at deployment
                 controls
                 muted
                 className={`${styles["billboard-video"]} ${styles["billboard-video-wide"]}`}
