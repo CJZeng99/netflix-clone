@@ -13,15 +13,19 @@ const Billboard = () => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   /* Starts playing trailer after a short delay */
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsPlaying(true);
-    }, 500);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setIsPlaying(true);
+  //   }, 500);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   const videoEndHandler = () => {
     setIsPlaying(false);
+  };
+
+  const videoPlayHandler = () => {
+    setIsPlaying(true);
   };
 
   return (
@@ -58,7 +62,7 @@ const Billboard = () => {
           </div>
 
           {/* Info and Button div */}
-          <BillboardInfo />
+          <BillboardInfo onPlay={videoPlayHandler} />
         </div>
       </div>
     </span>

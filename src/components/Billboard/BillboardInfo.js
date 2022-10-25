@@ -47,6 +47,7 @@ const BillboardInfo = (props) => {
       <div className={styles["billboard-button-container"]}>
         <Button
           className={`${styles["billboard-button"]} ${styles["billboard-play-button"]}`}
+          onClick={props.onPlay}
         >
           {playIcon}
           <div style={{ width: "1rem" }}></div>
