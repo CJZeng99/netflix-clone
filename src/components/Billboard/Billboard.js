@@ -39,12 +39,14 @@ const Billboard = () => {
 
           {/* Trailer div, only rendered when isPlaying is set */}
           {isPlaying && (
-            <div className={styles["billboard-video-container"]}>
+            <div
+              className={`${styles["billboard-video-container"]} ${styles["billboard-video-container-wide"]}`}
+            >
               <video
                 autoPlay // to be set at deployment
                 //controls
                 muted
-                className={`${styles["billboard-video"]} ${styles["billboard-video-wide"]}`}
+                className={`${styles["billboard-video"]}`}
                 onEnded={videoEndHandler}
               >
                 <source src={trailer} type="video/mp4" />
