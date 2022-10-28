@@ -14,12 +14,11 @@ const SliderItem = (props) => {
   }, [mouseOverItem]);
 
   const mouseOverHandler = (event) => {
-    const { y } = document.body.getBoundingClientRect();
     const { left, top, width, height } = event.target.getBoundingClientRect();
     setModalStyle({
       position: "absolute",
       left: left - width * 0.25 + "px",
-      top: top - y - 75 - height * 0.25 + "px",
+      top: top + window.scrollY - 33 - height * 0.25 + "px",
       width: width * 1.5 + "px",
     });
     setMouseOverItem(true);
