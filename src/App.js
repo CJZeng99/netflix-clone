@@ -5,7 +5,6 @@ import Billboard from "./components/Billboard";
 import Row from "./components/Row";
 import Footer from "./components/Footer";
 
-import bigList from "./api/movies.json";
 import "./normalize.css";
 
 function App() {
