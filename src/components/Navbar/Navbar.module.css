@@ -14,7 +14,6 @@
   width: 100%;
   z-index: 10;
   padding: 0 60px;
-  transition: 0.5s;
 }
 
 .navbar.navbar-scroll {
@@ -43,7 +42,6 @@
 
 .nav-item {
   margin-left: 20px;
-  font-size: 0.75vw;
 }
 
 .nav-item a {
